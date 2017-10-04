@@ -10,24 +10,18 @@ var x=0;
   var kp=0;
 
   function setup() {
-  ctx = createCanvas(windowWidth, windowHeight);  
-  // frameRate(5); // if you want to see it in slloowwmmoo
-  bullet=new Bullets();
+  ctx 		= createCanvas(windowWidth, windowHeight); 
+  gif 		= loadGif('tumblr_n9jk2qAjGS1s4fz4bo1_500.gif');
+  
+  bullet 	= new Bullets();
   noStroke();
-  //background(0,0,0); 
-  gif = loadGif('tumblr_n9jk2qAjGS1s4fz4bo1_500.gif');
-  this.bird=new Bird;
+  this.bird	=new Bird;
   this.enemy=new Enemy;
-  for(i=0;i<100;i++)
+  for(i=0;i<20;i++)
 	{
 		aliens[i]=new Enemy(random(600)+1000,random(600));
 	}
-  //this.bullet=new Bullets;
-  //bulletArr.push(new Bullets());
-  
-  
  
-  
  
 }
 function draw(){
@@ -35,19 +29,35 @@ function draw(){
   image(gif, 0, 0,windowWidth, windowHeight);
 
 	bird.show();
-	aliens[5].show();
-	aliens[50].show();
+	for(i=0;i<aliens.length;i++)
+	{
+		aliens[i].show();
+	}
+	
+	//aliens[50].show();
 	
 	for(i=0;i<bulletArr.length;i++){
 		if(bulletArr)
 		{
-			Disx=Math.abs(bulletArr[i].ii-enemy.iiix);
-			Disy=Math.abs(bulletArr[i].yy-enemy.iiiy);
-			if(Disx<bulletArr[i].r1 && Disy<bulletArr[i].r2)
+			
+			for(i1=0;i1<aliens.length;i1++)
 			{
-				enemy.show(1);	
+				Disx=Math.abs(bulletArr[i].ii-aliens[i1].iiix);
+				Disy=Math.abs(bulletArr[i].yy-aliens[i1].iiiy);
+				if(Disx<(aliens[i1].r1+bulletArr[i].r1) 
+					&& Disy<(aliens[i1].r2+bulletArr[i].r2))
+				{
+					aliens[i1].show(1);
+				}
 			}
 			bulletArr[i].show(i,random(255),random(255));
+			
+			
+			
+			
+			
+			
+			
 			
 			
 		}
