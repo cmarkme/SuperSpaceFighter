@@ -8,12 +8,14 @@ var x=0;
   var bulletArr=[];
   var aliens=[];
   var kp=0;
+
   function setup() {
   ctx = createCanvas(windowWidth, windowHeight);  
   // frameRate(5); // if you want to see it in slloowwmmoo
   bullet=new Bullets();
   noStroke();
-  background(0,0,0); 
+  //background(0,0,0); 
+  gif = loadGif('tumblr_n9jk2qAjGS1s4fz4bo1_500.gif');
   this.bird=new Bird;
   this.enemy=new Enemy;
   for(i=0;i<100;i++)
@@ -29,8 +31,8 @@ var x=0;
  
 }
 function draw(){
-	  background(0,0,0); 
-	  
+	background(0);
+  image(gif, 0, 0,windowWidth, windowHeight);
 
 	bird.show();
 	aliens[5].show();
@@ -45,7 +47,7 @@ function draw(){
 			{
 				enemy.show(1);	
 			}
-			bulletArr[i].show(i);
+			bulletArr[i].show(i,random(255),random(255));
 			
 			
 		}
