@@ -17,7 +17,7 @@ var x=0;
   noStroke();
   this.bird	=new Bird;
   this.enemy=new Enemy;
-  for(i=0;i<20;i++)
+  for(i=0;i<100;i++)
 	{
 		aliens[i]=new Enemy(random(600)+1000,random(600));
 	}
@@ -26,6 +26,12 @@ var x=0;
 }
 function draw(){
 	background(0);
+	textSize(100);
+	fill(0, 102, 153, 100);
+text("SCORE", windowWidth-500, 80);
+fill(0, 102, 153, 100);
+text(bird.score, windowWidth-500, 170);
+	//createP("HELLO WORLD");
   image(gif, 0, 0,windowWidth, windowHeight);
 
 	bird.show();
@@ -39,7 +45,7 @@ function draw(){
 	for(i=0;i<bulletArr.length;i++){
 		if(bulletArr)
 		{
-			
+			BulletKill=0;	
 			for(i1=0;i1<aliens.length;i1++)
 			{
 				Disx=Math.abs(bulletArr[i].ii-aliens[i1].iiix);
@@ -47,11 +53,20 @@ function draw(){
 				if(Disx<(aliens[i1].r1+bulletArr[i].r1) 
 					&& Disy<(aliens[i1].r2+bulletArr[i].r2))
 				{
-					aliens[i1].show(1);
+					//aliens[i1].show(1);
+					if(aliens.splice(i1,1)){ BulletKill=1;
+					bird.Score(1);
+					console.log(bird.score);
+					//bulletArr.splice(i,1);
+					break; }
 				}
 			}
-			bulletArr[i].show(i,random(255),random(255));
 			
+			bulletArr[i].show(i,random(255),random(255));
+			if(BulletKill===1)
+			{
+				bulletArr.splice(i,1);
+			}
 			
 			
 			

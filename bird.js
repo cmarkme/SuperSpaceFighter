@@ -1,4 +1,5 @@
 function Bird() {
+	this.score=0;
 	
 	
 	
@@ -10,6 +11,13 @@ function Bird() {
 
 	fill(255);
 	ellipse(x,mouseY,32,32);	
+	}
+	this.Score=function(scored)
+	{
+		if(scored)
+		{
+			this.score++;
+		}
 	}
 	
 	
