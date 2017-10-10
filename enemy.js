@@ -19,4 +19,5 @@ function Enemy(x,y)
 			this.sc=0;
 		}
 	}
+	//this.spawn=function()
 }

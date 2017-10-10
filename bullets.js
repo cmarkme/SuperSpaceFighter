@@ -1,12 +1,12 @@
 function Bullets(){
 	this.ii=0;
-	this.yy=mouseY;
+	this.yy=y;
 	this.r1=16;
 	this.r2=2;
 this.show=function(eye,rnnd1,rnnd2){
 	//background(255,0,0); 
 	if(this.ii<windowWidth){
-		this.ii+=20;
+		this.ii+=15;
 	}
 	else{
 		//ii=0;

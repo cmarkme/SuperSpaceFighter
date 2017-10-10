@@ -2,6 +2,19 @@ function Bird() {
 	this.score=0;
 	
 	
+	this.update=function()
+	{
+		if(y<mouseY)
+		{
+			y=y+(mouseY-y)*0.01;
+		}
+		if(y>mouseY)
+		{
+			y=y-(y-mouseY)*0.01;
+		}
+	}
+	
+	
 	
 	
 	
@@ -10,7 +23,8 @@ function Bird() {
 	//background(0,0,0); 
 
 	fill(255);
-	ellipse(x,mouseY,32,32);	
+	
+	ellipse(x,y,32,32);	
 	}
 	this.Score=function(scored)
 	{
