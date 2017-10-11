@@ -24,11 +24,12 @@ var x=0;
   bullet 	= new Bullets();
   noStroke();
   this.bird	=new Bird;
+  this.ball	=new Ball;
   //this.enemy=new Enemy;
   aliens.spawn
   for(i=0;i<100;i++)
 	{
-		aliens[i]=new Enemy(random(600)+1000,random(600));
+		aliens[i]=new Enemy(random(width)+width,random(height));
 	}
 	
 	//mySound[1].setVolume(0.0);
@@ -51,6 +52,8 @@ text(bird.score, windowWidth-500, 170);
   
 	bird.update();
 	bird.show();
+	ball.update();
+	ball.show();
 	for(i=0;i<aliens.length;i++)
 	{
 		aliens[i].show();
