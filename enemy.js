@@ -7,19 +7,19 @@ function Enemy(x,y)
 	this.iiiy=y;
 	this.r1=52;
 	this.r2=100;
-	this.iiixRnd=random(5);
+	this.iiixRnd=random(10);
 	this.step=0;
 	
 	this.show=function(hit)
 	{
 		if(this.iiixRnd<0)
 		{
-			this.iiixRnd=random(20);
+			this.iiixRnd=random(10);
 			this.step=100;
 		}
 		if(this.step<1)
 		{
-			this.iiix-=(this.iiixRnd=this.iiixRnd-1);
+			this.iiix-=(this.iiixRnd=this.iiixRnd-(0.1));
 		}
 		else
 		{
