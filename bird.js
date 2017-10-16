@@ -6,11 +6,11 @@ function Bird() {
 	{
 		if(y<mouseY)
 		{
-			y=y+(mouseY-y)*0.01;
+			y=y+(mouseY-y)*0.1;
 		}
 		if(y>mouseY)
 		{
-			y=y-(y-mouseY)*0.01;
+			y=y-(y-mouseY)*0.1;
 		}
 	}
 	

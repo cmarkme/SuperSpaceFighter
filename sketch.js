@@ -9,6 +9,7 @@ var x=0;
   var aliens=[];
   var kp=0;
   var mySound=[];
+  var level=0.1;
   
   
 /* function preload() {
@@ -26,12 +27,12 @@ var x=0;
   this.bird	=new Bird;
   this.ball	=new Ball;
   //this.enemy=new Enemy;
-  aliens.spawn
-  for(i=0;i<100;i++)
+  
+  for(i=0;i<10;i++)
 	{
-		aliens[i]=new Enemy(random(width)+width,random(height));
+		aliens[i]=new Enemy(random(width)+width/2,random(height),level);
 	}
-	
+	//aliens[0].spawn();
 	//mySound[1].setVolume(0.0);
  
  
@@ -70,8 +71,8 @@ text(bird.score, windowWidth-500, 170);
 			{
 				Disx=Math.abs(bulletArr[i].ii-aliens[i1].iiix);
 				Disy=Math.abs(bulletArr[i].yy-aliens[i1].iiiy);
-				if(Disx<(aliens[i1].r1+bulletArr[i].r1) 
-					&& Disy<(aliens[i1].r2+bulletArr[i].r2))
+				if(Disx<(aliens[i1].r1+bulletArr[i].r1)-25 
+					&& Disy<(aliens[i1].r2+bulletArr[i].r2)-50)
 				{
 					//aliens[i1].show(1);
 					if(aliens.splice(i1,1)){ BulletKill=1;
@@ -88,6 +89,27 @@ text(bird.score, windowWidth-500, 170);
 			{
 				bulletArr.splice(i,1);
 			}
+			if(aliens.length===0)
+			{
+				level+=0.6;
+				for(i=0;i<10;i++)
+				{
+					aliens[i]=new Enemy(random(width)+width,random(height),level);
+				}
+				
+				
+				
+				for(i=0;i<aliens.length;i++)
+				{
+					aliens[i].show();
+				}	
+				
+			}
+			
+			
+			
+			
+			
 			
 			
 			
