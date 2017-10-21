@@ -26,11 +26,14 @@ var x=0;
   noStroke();
   this.bird	=new Bird;
   this.ball	=new Ball;
+  //ctx.style.cursor='text';
+  document.body.style.cursor='no-drop';
+  //.style(cursor: none);
   //this.enemy=new Enemy;
   
   for(i=0;i<10;i++)
 	{
-		aliens[i]=new Enemy(random(width)+width/2,random(height),level);
+		aliens[i]=new Enemy(random(width),random(height),level);
 	}
 	//aliens[0].spawn();
 	//mySound[1].setVolume(0.0);

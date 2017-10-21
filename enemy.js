@@ -10,6 +10,16 @@ function Enemy(x,y,z)
 	this.iiixRnd=random(5);
 	this.step=0;
 	this.speedLevelIncrease=z;
+	this.iiiyMove=10;
+	this.iiiyMoveFirst=[1,2];
+	if(random(this.iiiyMoveFirst)===1)
+	{
+		this.iiiyMove=10;
+	}
+	else
+	{
+		this.iiiyMove=-10;
+	}
 	
 	this.show=function(hit)
 	{
@@ -26,9 +36,22 @@ function Enemy(x,y,z)
 			}
 			else
 			{
-				this.speedLevelIncrease=0.5;
+				this.speedLevelIncrease=0.05;
 			}
 			this.iiix-=(this.iiixRnd=this.iiixRnd-0.1);
+			
+			//Random applied to Y within height
+			if((this.iiiy-this.iiixRnd)<0)
+			{
+				this.iiiyMove=(this.iiixRnd=this.iiixRnd-0.1)
+				this.iiiy+=(this.iiixRnd=this.iiixRnd-0.1)
+			}
+			else if ((this.iiiy+this.iiixRnd)>(height-100))
+			{
+				this.iiiyMove=-(this.iiixRnd=this.iiixRnd-0.1)
+				this.iiiy+=(this.iiixRnd=this.iiixRnd-0.1)
+			}
+			this.iiiy+=this.iiiyMove*2;
 			//this.iiiy+=Math.sin(1);
 			
 			
