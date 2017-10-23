@@ -1,0 +1,22 @@
+{
+  "name": "space_ship_js",
+  "version": "1.0.0",
+  "description": "Space Ship Shoot Em Up in Javascript",
+  "main": "in.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmarkme/SuperSpaceFighter.git"
+  },
+  "author": "Mark Cunningham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmarkme/SuperSpaceFighter/issues"
+  },
+  "homepage": "https://github.com/cmarkme/SuperSpaceFighter#readme",
+  "dependencies": {
+    "server": "^1.0.0-beta.3"
+  }
+}
